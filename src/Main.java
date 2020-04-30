@@ -6,7 +6,9 @@ public class Main {
     static boolean isMatched = false;
     public static void main(String[] args) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Write any number from 0 to 1000000000");
+        System.out.println("Hello! I'll try to guess any your number \n" +
+                            "During the guessing process I'll count seconds for you");
+        System.out.println("Please, input any number from 0 to 1000000000");
         int yourNumber = 0;
         try {
             yourNumber = Integer.parseInt(reader.readLine());
