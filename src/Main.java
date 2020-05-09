@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     static boolean isMatched = false;
@@ -10,6 +11,7 @@ public class Main {
                             "During the guessing process I'll count seconds for you");
         System.out.println("Please, input any number from 0 to 1000000000");
         int yourNumber = 0;
+        AtomicInteger totalTime = new AtomicInteger();
         try {
             yourNumber = Integer.parseInt(reader.readLine());
             reader.close();
@@ -20,11 +22,12 @@ public class Main {
         //int randomNumber =(int) (Math.random() * 1_000_000_000);
         //System.out.println("I guess number: " + randomNumber);
         Thread timer = new Thread(() -> {
-            int i = 0;
+            int i = 1;
             try {
                 while (!isMatched) {
                     System.out.println("timer: " + i + " seconds");
                     i++;
+                    totalTime.getAndIncrement();
                     Thread.sleep(1000);
                 }
             } catch (Exception e) {
@@ -42,6 +45,7 @@ public class Main {
                    if (guessNumber == finalYourNumber) {
                        isMatched = true;
                        System.out.println("I'm Done! Your number is: " + guessNumber);
+                       System.out.println("I did it in: " + totalTime + "seconds");
                    }
                 }
             }
