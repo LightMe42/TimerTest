@@ -45,7 +45,7 @@ public class Main {
                    if (guessNumber == finalYourNumber) {
                        isMatched = true;
                        System.out.println("I'm Done! Your number is: " + guessNumber);
-                       System.out.println("I did it in: " + totalTime + "seconds");
+                       System.out.println("Finished in: " + totalTime + "seconds");
                    }
                 }
             }
