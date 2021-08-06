@@ -1,2 +1,1 @@
-This app will replace your message with byte code to it's hidden version. 
-Now you can use console version for encrypting and decrypting.
+This small app will guess your number and feedback with time that was needed for the right guess
